@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Set up Git and Github
+
+# fancy_echo() function from thoughtbot/laptop
+fancy_echo() {
+  printf "\n%b\n" "$1"
+}
+
+# Configure git
+if [ ! -f "$HOME/.git/config" ]; then
+  fancy_echo "Configuring git user name, email, pw..."
+    git config --global user.name "Lev Brie"
+    git config --global user.email "lev.brie@gmail.com"
+    git config --global color.ui true
+fi
