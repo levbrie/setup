@@ -13,4 +13,5 @@ if [ ! -f "$HOME/.git/config" ]; then
     git config --global user.name "Lev Brie"
     git config --global user.email "lev.brie@gmail.com"
     git config --global color.ui true
+    git config --global hub.protocol https
 fi
