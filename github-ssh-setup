@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# set up ssh keys for Github
+
+# fancy_echo() function from thoughtbot/laptop
+fancy_echo() {
+  printf "\n%b\n" "$1"
+}
+
+# Generate new SSH key if none exists
+if [ ! -f "~/.ssh/id_rsa.pub" ]; then
+  fancy_echo "Generating new SSH key in ~/.ssh/id_rsa.pub..."
+    ssh-keygen -t rsa -C "lev.brie@gmail.com"
+    # add new key to ssh-agent
+    ssh-add ~/.ssh/id_rsa
+    # copy key to clipboard
+    pbcopy < ~/.ssh/id_rsa.pub
+fi
